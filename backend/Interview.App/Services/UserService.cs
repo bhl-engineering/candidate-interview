@@ -12,9 +12,9 @@ public class UserService : IUserService
     _dataService = dataService;
   }
 
-  public async Task<UserResponseModel> GetUserById(Guid userId)
+  public async Task<UserResponseModel> GetUserByIdAsync(Guid userId)
   {
-    var user = await _dataService.GetUserById(userId);
+    var user = await _dataService.GetUserByIdAsync(userId);
     if (user == null)
     {
       throw new UserNotFoundException();

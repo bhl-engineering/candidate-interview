@@ -19,12 +19,12 @@ public class SQLService : IDataService
     },
   };
     
-  public Task<UserModel?> GetUserById(Guid userId)
+  public Task<UserModel?> GetUserByIdAsync(Guid userId)
   {
     return Task.FromResult(_users.FirstOrDefault(u => u.Id == userId));
   }
 
-  public Task<IEnumerable<UserModel>> GetAllUsers()
+  public Task<IEnumerable<UserModel>> GetAllUsersAsync()
   {
     return Task.FromResult(_users);
   }

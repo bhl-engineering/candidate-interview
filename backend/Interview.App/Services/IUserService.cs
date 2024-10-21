@@ -4,5 +4,5 @@ namespace Interview.App.Services;
 
 public interface IUserService
 {
-  public Task<UserResponseModel> GetUserById(Guid userId);
+  public Task<UserResponseModel> GetUserByIdAsync(Guid userId);
 }

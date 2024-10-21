@@ -33,7 +33,7 @@ public class UserServiceTests
     public async Task MultipleOfThreeReturnsFizz()
     {
         var expected = "John";
-        var result = await _userService.GetUserById(Guid.Parse("28af44d0-cbfd-49b5-963c-1d3fe88f5d9d"));
+        var result = await _userService.GetUserByIdAsync(Guid.Parse("28af44d0-cbfd-49b5-963c-1d3fe88f5d9d"));
 
         Assert.That(result.FirstName, Is.EqualTo(expected));
     }

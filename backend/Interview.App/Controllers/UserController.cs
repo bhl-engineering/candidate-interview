@@ -21,7 +21,7 @@ public class UserController : ControllerBase
   {
     try
     {
-      var user = _userService.GetUserById(id);
+      var user = _userService.GetUserByIdAsync(id);
       return Ok(user);
     }
     catch (UserNotFoundException)
@@ -29,28 +29,4 @@ public class UserController : ControllerBase
       return NotFound();
     }
   }
-
-  /*[HttpPost]
-  public ActionResult<UserResponseModel> CreateUser([FromBody] UserCreateModel newUser)
-  {
-    if (newUser == null || string.IsNullOrEmpty(newUser.Username))
-    {
-      return BadRequest("Invalid user data.");
-    }
-
-    users.Add(newUser);
-    return CreatedAtAction(nameof(GetUsers), new { id = newUser.Id }, newUser);
-  }
-  
-  [HttpPut]
-  public ActionResult<UserResponseModel> UpdateUser([FromBody] UserUpdateModel newUser)
-  {
-    if (newUser == null || string.IsNullOrEmpty(newUser.Username))
-    {
-      return BadRequest("Invalid user data.");
-    }
-
-    users.Add(newUser);
-    return CreatedAtAction(nameof(GetUsers), new { id = newUser.Id }, newUser);
-  }*/
 }
