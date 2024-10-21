@@ -29,4 +29,11 @@ public class UserController : ControllerBase
       return NotFound();
     }
   }
+
+  [HttpPost]
+  public ActionResult<UserResponseModel> CreateUser([FromBody] UserCreateModel newUser)
+  {
+    _userService.CreateUser(newUser.Username, newUser.Password, newUser.FirstName, newUser.LastName );
+    return Ok();
+  }
 }

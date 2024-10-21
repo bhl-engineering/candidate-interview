@@ -28,4 +28,13 @@ public class SQLService : IDataService
   {
     return Task.FromResult(_users);
   }
+
+  public void CreateUser(UserModel user)
+  {
+    SaveToTheDatabase(user);
+  }
+
+  private void SaveToTheDatabase(UserModel user)
+  {
+  }
 }
