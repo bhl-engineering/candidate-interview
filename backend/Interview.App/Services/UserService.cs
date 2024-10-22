@@ -29,4 +29,18 @@ public class UserService : IUserService
       LastName = user.LastName,
     };
   }
+
+  public void CreateUser(string username, string password, string firstName, string lastName)
+  {
+    var newUser = new UserModel()
+    {
+      Username = username,
+      FirstName = firstName,
+      Id = Guid.NewGuid(),
+      LastName = lastName,
+      Password = password
+    };
+    
+    _dataService.CreateUser(newUser);
+  }
 }
